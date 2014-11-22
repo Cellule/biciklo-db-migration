@@ -1,0 +1,19 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertItem`(
+	IN _code int(12),
+    IN _name varchar(45),
+    IN _price varchar(45),
+	IN _threshold int(5),
+    IN _quantity int(11)
+)
+BEGIN
+	INSERT INTO item (code,name,price,threshold)
+    VALUES(_code,_name,_price,_threshold);
+    
+    SET @last_ID = LAST_INSERT_ID();
+    
+    INSERT INTO inventory (idItem,quantityStock,quantityReserved)
+    VALUES(last_id,_quantity,0);
+END
+
+
+item.price => Decimal(12,2)

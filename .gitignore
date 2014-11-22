@@ -26,3 +26,8 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+/pieces.json
+/factures.json
+/membres.json
+/*.sublime-workspace
+/mykoopData.sql
